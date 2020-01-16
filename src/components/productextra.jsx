@@ -48,7 +48,7 @@ class ProductExtra extends Component {
                 helper.prefix + "book/reviews/" + this.props.id
               );
               console.log("fecth book id = ", this.props.id);
-              this.props.history.push(`/product`);
+              this.props.history.push(`/product/`+this.props.id);
             }}
           >
             <div>
@@ -154,7 +154,7 @@ class ProductExtra extends Component {
             <Link style={{width: '100%', fontSize: 80, display: this.state.mouseOver ? "none" : "inline"}}>
             &nbsp;
             </Link>
-            <Link to="/product">
+            <Link to="/product/:id">
               <button
                 type="button"
                 class="btn btn-primary mt-2"
@@ -171,7 +171,7 @@ class ProductExtra extends Component {
         <MobileView>
           <div
             class="cr-item-mb"
-            onClick={() => this.props.history.push(`/product`)}
+            onClick={() => this.props.history.push(`/product/`+this.props.id)}
           >
             <div>
               <div>

@@ -162,7 +162,7 @@ class navbar extends Component {
                       <div class="item01 d-flex">
                         <div class="thumb">
                           <Link
-                            to="/product"
+                            to="/product/:id"
                             onClick={() => {
                               this.props.fetchBook(
                                 helper.prefix + "book/singlebook/" + book.id
@@ -177,7 +177,7 @@ class navbar extends Component {
                         <div class="content">
                           <h6>
                             <Link
-                              to="/product"
+                              to="/product/:id"
                               onClick={() => {
                                 this.props.fetchBook(
                                   helper.prefix + "book/singlebook/" + book.id
@@ -1492,8 +1492,8 @@ class navbar extends Component {
                     })
                   }
                 >
-                  <a class="nav-link" href="#">
-                    বইমেলা
+                  <a class="nav-link" href="./bookFair">
+                  অমর একুশে গ্রন্থমেলা ২০২০
                   </a>
                 </li>
               </ul>

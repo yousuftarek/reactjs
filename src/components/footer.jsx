@@ -30,7 +30,7 @@ class Footer extends Component {
             >
             <h6 class="font-weight-bold">Site Map</h6>
             <p>
-              <a class="dark-grey-text" href="./navbar">
+              <a class="dark-grey-text" href="">
                 Book
               </a>
             </p>
@@ -91,7 +91,7 @@ class Footer extends Component {
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./about">
                 About Gronthik
               </a>
             </p>
@@ -180,8 +180,8 @@ class Footer extends Component {
             >
             <div class="col-md-3 col-lg-4 col-xl-3 mb-4"
             style={{ color: "#000" }}>
-              <h5 class="text-uppercase font-weight-bold mb-2">
-              gronthik.com
+              <h5 class="font-weight-bold mb-2">
+              Gronthik Media
               </h5>
               <div class="row m-0">
                 <div

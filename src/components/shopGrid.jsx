@@ -268,7 +268,7 @@ class shopGrid extends Component {
     } else if (this.props.books.publisher) {
       return (
         <div class="row m-0">
-        <img src="images/publishers/cover.jpg" alt="cover"/>
+        {/* <img src="images/publishers/cover.jpg" alt="cover"/> */}
           <div class="col-2">
             <BrowserView>
               <div class="browse__meta--thumbnail">
@@ -1250,7 +1250,7 @@ class shopGrid extends Component {
                           class="col"
                           style={{ borderRight: "1px solid gray" }}
                           onClick={() => {
-                            console.log("fuck");
+                            console.log("book");
                             this.setState({ sortMobile: true });
                           }}
                         >
@@ -1273,11 +1273,11 @@ class shopGrid extends Component {
                       <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                           <li class="breadcrumb-item">
-                            <Link to="/">Books</Link>
+                            <Link to="/">Home</Link>
                           </li>
 
                           <li class="breadcrumb-item">
-                            <Link to="/">Rare/Antique Books</Link>
+                            <Link to="/">Books</Link>
                           </li>
                           <li class="breadcrumb-item">
                             <Link>

@@ -100,9 +100,15 @@ class Productz extends Component {
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-
-  
-
+  componentDidMount(){
+    const { id } = this.props.match.params
+   
+    this.props.fetchBook(
+      helper.prefix + "book/singlebook/" + id
+    );
+    this.props.fetchReviews( helper.prefix + "book/reviews/" + id)
+    console.log("Miaaa",this.props.book.book)
+  }
   changeRating = newRating => {
     this.setState({
       review_rating: newRating
@@ -334,15 +340,15 @@ class Productz extends Component {
     }
   };
 
-  isbn = () => {
-    try {
-      if (this.props.book.book) {
-        return this.props.book.book.isbn;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // isbn = () => {
+  //   try {
+  //     if (this.props.book.book) {
+  //       return this.props.book.book.isbn;
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   addtoCart = () => {
     try {
@@ -651,7 +657,7 @@ class Productz extends Component {
                     </div>
                     <div class="col-lg-6 col-12">
                       <div class="product__info__main">
-                        {console.log("mother fuck ", this.title())}
+                        {console.log("book ", this.title())}
                         <h1 class="mb-4">{this.title()}</h1>
                         {/**/}
                         <Link
@@ -755,12 +761,16 @@ class Productz extends Component {
                         <div class="product-share">
                           <ul>
                             <li class="categories-title mr-2">Share :</li>
+                            <a target="_blank" href="https://www.facebook.com/gronthik.com19">
                             <li>
                               <img class="social_icon" src="images/icons/HELPLINE_fb.png"/>  
                             </li>
+                            </a>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCxTKi6rOVcYgmIjwRizB95w?fbclid=IwAR1VHkwi93u82l7b87zxBjmhkFQQUuzN4I2z6_5XtIN2Vxu4lBk9hP1QnPs">
                             <li>
                               <img class="social_icon" src="images/icons/HELPLINE_tube.png"/>  
                             </li>
+                            </a>
                             <li>
                             <img class="social_icon" src="images/icons/HELPLINE_inst.png"/>
                             </li>
@@ -864,10 +874,10 @@ class Productz extends Component {
                               </td>
                             </tr>
 
-                            <tr>
+                            {/* <tr>
                             <td>ISBN</td>
                             <td>{this.isbn()}</td>
-                          </tr>
+                          </tr> */}
 
                             <tr>
                               <td>Number of Pages</td>

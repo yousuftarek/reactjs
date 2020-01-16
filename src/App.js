@@ -22,6 +22,8 @@ import Shipping from "./components/shipping";
 import Orders from "./components/orders";
 import Account from "./components/account";
 import Seemore from "./components/seemore";
+import About from "./components/about";
+import BookFair from "./components/bookFair";
 
 // import { Style } from "react-style-tag";
 import {Provider} from 'react-redux'
@@ -70,7 +72,7 @@ class App extends Component {
 
           <Route
             exact
-            path="/product"
+            path="/product/:id"
             exact
             strict
             render={props => <SingleProduct {...props}/>}
@@ -134,6 +136,20 @@ class App extends Component {
             render={props => <Seemore {...props}/>}
           />
 
+          <Route
+            exact
+            path="/about"
+            exact
+            strict
+            render={props => <About/>}
+          />
+           <Route
+            exact
+            path="/bookFair"
+            exact
+            strict
+            render={props => <BookFair/>}
+          />
           <Footer />
         </div>
       </BrowserRouter>
