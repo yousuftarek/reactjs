@@ -30,32 +30,32 @@ class Footer extends Component {
             >
             <h6 class="font-weight-bold">Site Map</h6>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./">
                 Book
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./rareBook">
                 Rare/Antique Book
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./readerCorner">
                 Reader Corner
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./institutionalOrder">
                 Institutional Order
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./blog">
                 Blog
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./bookFair">
                 Book Fair
               </a>
             </p>
@@ -66,27 +66,27 @@ class Footer extends Component {
             >
             <h6 class="font-weight-bold">About Us</h6>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./ourMission">
                 Our Mission
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./history">
                 History
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./termsCondition">
               Terms & Condition
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./privacyPolicy">
                 Privacy & Policy
               </a>
             </p>
             <p>
-              <a class="dark-grey-text" href="">
+              <a class="dark-grey-text" href="./cookiesPolicy">
                 Cookies Policy
               </a>
             </p>

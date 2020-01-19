@@ -22,8 +22,17 @@ import Shipping from "./components/shipping";
 import Orders from "./components/orders";
 import Account from "./components/account";
 import Seemore from "./components/seemore";
-import About from "./components/about";
+import RareBook from "./components/rareBook";
+import ReaderCorner from "./components/readerCorner";
+import Blog from "./components/blog";
+import InstitutionalOrder from "./components/institutionalOrder";
 import BookFair from "./components/bookFair";
+import OurMission from "./components/ourMission";
+import History from "./components/history";
+import TermsCondition from "./components/termsCondition";
+import PrivacyPolicy from "./components/privacyPolicy";
+import CookiesPolicy from "./components/cookiesPolicy";
+import About from "./components/about";
 
 // import { Style } from "react-style-tag";
 import {Provider} from 'react-redux'
@@ -135,20 +144,82 @@ class App extends Component {
             strict
             render={props => <Seemore {...props}/>}
           />
-
+          <Route
+            exact
+            path="/rareBook"
+            exact
+            strict
+            render={props => <RareBook/>}
+          />
+           <Route
+            exact
+            path="/readerCorner"
+            exact
+            strict
+            render={props => <ReaderCorner/>}
+          />
+          <Route
+            exact
+            path="/blog"
+            exact
+            strict
+            render={props => <Blog/>}
+          />
+          <Route
+            exact
+            path="/institutionalOrder"
+            exact
+            strict
+            render={props => <InstitutionalOrder/>}
+          />
+          <Route
+            exact
+            path="/bookFair"
+            exact
+            strict
+            render={props => <BookFair/>}
+          />
+          <Route
+            exact
+            path="/ourMission"
+            exact
+            strict
+            render={props => <OurMission/>}
+          />
+          <Route
+            exact
+            path="/history"
+            exact
+            strict
+            render={props => <History/>}
+          />
+          <Route
+            exact
+            path="/termsCondition"
+            exact
+            strict
+            render={props => <TermsCondition/>}
+          />
+          <Route
+            exact
+            path="/privacyPolicy"
+            exact
+            strict
+            render={props => <PrivacyPolicy/>}
+          />
+          <Route
+            exact
+            path="/cookiesPolicy"
+            exact
+            strict
+            render={props => <CookiesPolicy/>}
+          />
           <Route
             exact
             path="/about"
             exact
             strict
             render={props => <About/>}
-          />
-           <Route
-            exact
-            path="/bookFair"
-            exact
-            strict
-            render={props => <BookFair/>}
           />
           <Footer />
         </div>

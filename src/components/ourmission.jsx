@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "react-router-dom";
 
-class Ourmission extends Component {
+class ourMission extends Component {
    constructor(props){
        super(props);
    }
@@ -21,4 +21,4 @@ class Ourmission extends Component {
   }
 }
 
-export default Ourmission;
+export default ourMission;

@@ -1424,7 +1424,7 @@ class navbar extends Component {
                     })
                   }
                 >
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="./rareBook">
                     পুরাতন/দুর্লভ বই
                   </a>
                 </li>
@@ -1441,7 +1441,7 @@ class navbar extends Component {
                     })
                   }
                 >
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="./readerCorner">
                     পাঠক কর্নার
                   </a>
                 </li>
@@ -1458,7 +1458,7 @@ class navbar extends Component {
                     })
                   }
                 >
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="./institutionalOrder">
                     প্রাতিষ্ঠানিক অর্ডার
                   </a>
                 </li>
@@ -1475,7 +1475,7 @@ class navbar extends Component {
                     })
                   }
                 >
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="./blog">
                     অভিযাত্রী
                   </a>
                 </li>
@@ -1585,11 +1585,11 @@ class navbar extends Component {
               />
             </div>
             <div class="ml-4">{this.allPublisher()}</div>
-            <a href="#">পুরাতন/দুর্লভ বই</a>
-            <a href="#">পাঠক কর্নার</a>
-            <a href="#">প্রাতিষ্ঠানিক অর্ডার</a>
-            <a href="#">অভিযাত্রী</a>
-            <a href="#">বইমেলা</a>
+            <a href="./rareBook">পুরাতন/দুর্লভ বই</a>
+            <a href="./readerCorner">পাঠক কর্নার</a>
+            <a href="./institutionOrder">প্রাতিষ্ঠানিক অর্ডার</a>
+            <a href="./blog">অভিযাত্রী</a>
+            <a href="./bookFair">বইমেলা</a>
           </div>
           <div
             id="profileSidenav"
