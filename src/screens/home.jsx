@@ -207,6 +207,7 @@ class Home extends Component {
 
 
   componentDidMount() {
+   
     // Jquery here $(...)...
   }
 

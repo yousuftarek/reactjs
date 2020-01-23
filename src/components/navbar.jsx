@@ -1281,7 +1281,7 @@ class navbar extends Component {
                           />
                         </ReactTyped>
                         <Link
-                          to="shopGrid"
+                          to="/shopGrid"
                           onClick={() => {
                             this.setState({ search: false });
                             this.props.fetchBooks(
