@@ -27,7 +27,7 @@ import ReaderCorner from "./components/readerCorner";
 import Blog from "./components/blog";
 import InstitutionalOrder from "./components/institutionalOrder";
 import BookFair from "./components/bookFair";
-import OurMission from "./components/ourMission";
+import OurMission from "./components/ourmission";
 import History from "./components/history";
 import TermsCondition from "./components/termsCondition";
 import PrivacyPolicy from "./components/privacyPolicy";

@@ -228,7 +228,7 @@ class navbar extends Component {
             <div class="mini_action checkout">
               <Link
                 class="checkout__btn"
-                to={"cart"}
+                to={"/cart"}
                 onClick={() => this.setState({ cart: !this.state.cart })}
               >
                 Go to Checkout
