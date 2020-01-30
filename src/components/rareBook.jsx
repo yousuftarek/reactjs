@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ProductExtra from "./productextra";
 import ListBook from "./listbook";
 import productexData from "./../dummyData/productex";
+import PropTypes from "prop-types";
 import * as helper from "../helper";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -23,8 +24,8 @@ class rareBook extends Component {
   }
   showBooks = () => {
     if (
-      this.props.books.books.data != null ||
-      this.props.books.books.data != []
+      this.props.books.books.data !== null ||
+      this.props.books.books.data !== []
     ) {
       let books = this.props.books.books.data;
       console.log("book ", this.props.books);
@@ -40,7 +41,7 @@ class rareBook extends Component {
             author={
               item.author
                 ? null
-                : this.props.books.author != null
+                : this.props.books.author !== null
                 ? this.props.books.author.name
                 : null
             }
@@ -56,15 +57,15 @@ class rareBook extends Component {
   pagination = () => {
     try {
       if (
-        this.props.books.books.data != null ||
-        this.props.books.books.data != []
+        this.props.books.books.data !== null ||
+        this.props.books.books.data !== []
       ) {
         return (
           <React.Fragment>
             <li
               style={{
                 display:
-                  this.props.books.books.prev_page_url != null
+                  this.props.books.books.prev_page_url !== null
                     ? "inline"
                     : "none"
               }}
@@ -97,7 +98,7 @@ class rareBook extends Component {
             <li
               style={{
                 display:
-                  this.props.books.books.next_page_url != null
+                  this.props.books.books.next_page_url !== null
                     ? "inline"
                     : "none"
               }}
@@ -133,9 +134,9 @@ class rareBook extends Component {
                   id="nav-grid"
                   role="tabpanel"
                 >
-                  {this.props.fetchBooks(helper.prefix + "category/" + 1596)}
+                  {/* {this.props.fetchBooks(helper.prefix + "category/" + 1596)} */}
                   <div class="row m-0">
-                    {this.props.books.books != null
+                    {this.props.books.books !== null
                       ? this.showBooks()
                       : console.log("no books found")}
                   </div>
@@ -146,7 +147,7 @@ class rareBook extends Component {
                   id="nav-list"
                   role="tabpanel"
                 >
-                  {productexData.map((item, index) => {
+                  {/* {productexData.map((item, index) => {
                     return (
                       <ListBook
                         key={index}
@@ -158,7 +159,7 @@ class rareBook extends Component {
                         name={item.name}
                       />
                     );
-                  })}
+                  })} */}
                 </div>
               </div>
             </div>
@@ -168,6 +169,15 @@ class rareBook extends Component {
     );
   }
 }
+
+rareBook.propTypes = {
+  fetchBooks: PropTypes.func.isRequired,
+  selectPublisher: PropTypes.func.isRequired,
+  selectAuthor: PropTypes.func.isRequired,
+  sortBooks: PropTypes.func.isRequired,
+  books: PropTypes.array.isRequired,
+  newBook: PropTypes.object
+};
 
 const mapStateToProps = state => ({
   books: state.books.items,

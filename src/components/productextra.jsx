@@ -48,11 +48,7 @@ class ProductExtra extends Component {
                 helper.prefix + "book/reviews/" + this.props.id
               );
               console.log("fecth book id = ", this.props.id);
-<<<<<<< HEAD
               this.props.history.push(`/product/`+this.props.id);
-=======
-              this.props.history.push(`/product/` + this.props.id);
->>>>>>> 028a4f5cac5b776e5567ff287f8abb56d62a078d
             }}
           >
             <div>
@@ -109,15 +105,11 @@ class ProductExtra extends Component {
 
               <img
                 class="m-item-img ml-auto mr-auto"
-<<<<<<< HEAD
-                src={this.props.image == null ? "images/books/dummy.png" : this.props.image}
-=======
                 src={
-                  this.props.image == null
+                  this.props.image === null
                     ? "images/books/dummy.png"
                     : this.props.image
                 }
->>>>>>> 028a4f5cac5b776e5567ff287f8abb56d62a078d
                 style={{
                   width: 130,
                   height: 188,
@@ -160,13 +152,6 @@ class ProductExtra extends Component {
                   opacity: this.state.mouseOver ? 0.3 : 1
                 }}
               >
-<<<<<<< HEAD
-                মূল্য : {helper.getNewPrice(this.props.price, this.props.discount)} Tk.
-              </p>
-            </div>
-            <Link style={{width: '100%', fontSize: 80, display: this.state.mouseOver ? "none" : "inline"}}>
-            &nbsp;
-=======
                 মূল্য :{" "}
                 {helper.getNewPrice(this.props.price, this.props.discount)} Tk.
               </p>
@@ -179,7 +164,6 @@ class ProductExtra extends Component {
               }}
             >
               &nbsp;
->>>>>>> 028a4f5cac5b776e5567ff287f8abb56d62a078d
             </Link>
             <Link to="/product/:id">
               <button
@@ -198,11 +182,7 @@ class ProductExtra extends Component {
         <MobileView>
           <div
             class="cr-item-mb"
-<<<<<<< HEAD
-            onClick={() => this.props.history.push(`/product/`+this.props.id)}
-=======
             onClick={() => this.props.history.push(`/product/` + this.props.id)}
->>>>>>> 028a4f5cac5b776e5567ff287f8abb56d62a078d
           >
             <div>
               <div>
@@ -214,9 +194,6 @@ class ProductExtra extends Component {
                 <p class="mobile-discount">{this.props.discount}%</p>
               </div>
               <img class="read_some_mb" src="images/badges/read_some.png" />
-<<<<<<< HEAD
-              <img class="m-item-img ml-auto mr-auto" src={this.props.image == null ? "images/books/dummy.png" : this.props.image} />
-=======
               <img
                 class="m-item-img ml-auto mr-auto"
                 src={
@@ -225,30 +202,10 @@ class ProductExtra extends Component {
                     : this.props.image
                 }
               />
->>>>>>> 028a4f5cac5b776e5567ff287f8abb56d62a078d
             </div>
             <div style={{ overflow: "hidden" }}>
               <p style={{ color: "black", marginTop: 10 }}>{this.props.name}</p>
               <p style={{ color: "black" }}>{this.props.writer}</p>
-<<<<<<< HEAD
-              <p style={{ color: "black" }}>মূল্য : {helper.getNewPrice(this.props.price, this.props.discount)}</p>
-            </div>
-            <button
-                type="button"
-                class="btn btn-outline-warning"
-                style={{ zIndex: 1, color: '#FFC107', fontSize: 12}}
-                onClick={e => {
-                  e.stopPropagation();
-                  this.props.addtoCart(this.props.cart_book);
-                }}
-              >
-                <FontAwesome
-                  name="fas fa-shopping-cart"
-                  style={{ color: "#FFC107", marginRight: 10}}
-                />
-                Add to Cart
-              </button>
-=======
               <p style={{ color: "black" }}>
                 মূল্য :{" "}
                 {helper.getNewPrice(this.props.price, this.props.discount)}
@@ -269,7 +226,6 @@ class ProductExtra extends Component {
               />
               Add to Cart
             </button>
->>>>>>> 028a4f5cac5b776e5567ff287f8abb56d62a078d
           </div>
         </MobileView>
       </React.Fragment>
@@ -283,13 +239,6 @@ ProductExtra.propTypes = {
   fetchReviews: PropTypes.func.isRequired
 };
 
-<<<<<<< HEAD
-export default connect(
-  null,
-  { fetchBook, addtoCart, fetchReviews }
-)(ProductExtra);
-=======
 export default connect(null, { fetchBook, addtoCart, fetchReviews })(
   ProductExtra
 );
->>>>>>> 028a4f5cac5b776e5567ff287f8abb56d62a078d

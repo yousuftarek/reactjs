@@ -266,10 +266,16 @@ class Shipping extends Component {
                             this.setState({ payment: e.target.value })
                           }
                         >
-                          <option value="bkash">bkash</option>
-                          <option value="cash on delivery">
-                            Cash on delivery
+                          
+                          {
+                          (this.state.location >=1 && this.state.location <= 13) || this.state.location=== null ?
+                            
+                            <option value="cash on delivery">
+                              Cash on delivery
                           </option>
+                          : null
+                        }
+                        <option value="bkash">bkash</option>
                         </select>
                       </div>
                       {this.transectionInput()}
