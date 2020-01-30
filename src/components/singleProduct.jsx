@@ -577,7 +577,7 @@ class Productz extends Component {
   };
 
   readBook = () =>{
-    if(this.props.book.pages != null && this.props.book.pages != []){
+    if(this.props.book.pages !== null && this.props.book.pages !== []){
       return(
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -667,7 +667,7 @@ class Productz extends Component {
                             this.props.fetchBooks(
                               helper.prefix +
                                 "author/books/" +
-                                this.publisher_id()
+                                this.author_id()
                             );
                           }}
                         >
@@ -1001,7 +1001,7 @@ class Productz extends Component {
                                       role="progressbar"
                                       style={{
                                         width:
-                                          this.state.fivestar != null
+                                          this.state.fivestar !== null
                                             ? this.state.fivestar
                                             : "0%"
                                       }}

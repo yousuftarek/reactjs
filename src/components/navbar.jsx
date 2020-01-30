@@ -277,13 +277,13 @@ class navbar extends Component {
                 লেখক{" "}
                 <FontAwesome
                   name={
-                    this.state.mouseClickedAuthor == true
+                    this.state.mouseClickedAuthor === true
                       ? "angle-up"
                       : "angle-down"
                   }
                   style={{
                     color:
-                      this.state.mouseOverAuthor == true ? "#C67935" : "black",
+                      this.state.mouseOverAuthor === true ? "#C67935" : "black",
                     fontSize: 14
                   }}
                 />
@@ -311,13 +311,13 @@ class navbar extends Component {
                 প্রকাশনী{" "}
                 <FontAwesome
                   name={
-                    this.state.mouseClickedPublisher == true
+                    this.state.mouseClickedPublisher === true
                       ? "angle-up"
                       : "angle-down"
                   }
                   style={{
                     color:
-                      this.state.mouseOverPublisher == true
+                      this.state.mouseOverPublisher === true
                         ? "#C67935"
                         : "black",
                     fontSize: 14
@@ -348,13 +348,13 @@ class navbar extends Component {
                 ক্যাটাগরী{" "}
                 <FontAwesome
                   name={
-                    this.state.mouseClickedCategory == true
+                    this.state.mouseClickedCategory === true
                       ? "angle-up"
                       : "angle-down"
                   }
                   style={{
                     color:
-                      this.state.mouseOverCategory == true
+                      this.state.mouseOverCategory === true
                         ? "#C67935"
                         : "black",
                     fontSize: 14
@@ -568,7 +568,7 @@ class navbar extends Component {
       });
   };
   authors = () => {
-    if (this.state.mouseClickedAuthor == true && this.state.authors != null) {
+    if (this.state.mouseClickedAuthor === true && this.state.authors !== null) {
       return (
         <div class="row ml-5 mr-5 mega-menu">
           {this.state.authors.map((group, i) => {
@@ -629,8 +629,8 @@ class navbar extends Component {
 
   categories = () => {
     if (
-      this.state.mouseClickedCategory == true &&
-      this.state.categories != null
+      this.state.mouseClickedCategory === true &&
+      this.state.categories !== null
     ) {
       return (
         <div class="row ml-5 mr-5 mega-menu">
@@ -692,8 +692,8 @@ class navbar extends Component {
 
   publishers = () => {
     if (
-      this.state.mouseClickedPublisher == true &&
-      this.state.publishers != null
+      this.state.mouseClickedPublisher === true &&
+      this.state.publishers !== null
     ) {
       return (
         <div class="row ml-5 mr-5 mega-menu">
@@ -883,7 +883,7 @@ class navbar extends Component {
 
   cart_total = () => {
     try {
-      if (this.props.cart != undefined) {
+      if (this.props.cart !== undefined) {
         return this.props.cart.length;
       } else {
         return 0;
@@ -896,10 +896,10 @@ class navbar extends Component {
   autocomplete = () => {
     if (
       this.state.search === true &&
-      this.state.searchText != null &&
-      this.state.searchText != "" &&
-      this.state.bookSuggestions != null &&
-      this.state.bookSuggestions != []
+      this.state.searchText !== null &&
+      this.state.searchText !== "" &&
+      this.state.bookSuggestions !== null &&
+      this.state.bookSuggestions !== []
     ) {
       return (
         <div class="row autocomplete">
@@ -963,10 +963,10 @@ class navbar extends Component {
   autocomplete2 = () => {
     if (
       this.state.search === true &&
-      this.state.searchText != null &&
-      this.state.searchText != "" &&
-      this.state.bookSuggestions != null &&
-      this.state.bookSuggestions != []
+      this.state.searchText !== null &&
+      this.state.searchText !== "" &&
+      this.state.bookSuggestions !== null &&
+      this.state.bookSuggestions !== []
     ) {
       return (
         <div class="row autocomplete2">
@@ -1401,7 +1401,7 @@ class navbar extends Component {
               >
                 <li
                   class={
-                    window.location.pathname == "/"
+                    window.location.pathname === "/"
                       ? "nav-item nav-sub active"
                       : "nav-sub nav-item"
                   }

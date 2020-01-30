@@ -72,7 +72,7 @@ class Orders extends Component {
             <td>
               <div>
                   <img
-                    src={order.cover == null ? "images/books/dummy.png" : order.cover}
+                    src={order.cover === null ? "images/books/dummy.png" : order.cover}
                     style={{ width: 100, height: 130 }}
                   />
                 <p style={{ fontSize: 16 }}>{order.book_name}</p>
@@ -84,18 +84,18 @@ class Orders extends Component {
               <p
                 style={{ fontSize: 16 }}
                 class={
-                  order.is_seen_by_admin == 0 ? "text-danger" : "text-success"
+                  order.is_seen_by_admin === 0 ? "text-danger" : "text-success"
                 }
               >
-                {order.is_seen_by_admin == 0 ? "Not seen yet" : "Seen by admin"}
+                {order.is_seen_by_admin === 0 ? "Not seen yet" : "Seen by admin"}
               </p>
             </td>
             <td>
               <p
                 style={{ fontSize: 16 }}
-                class={order.is_completed == 0 ? "text-danger" : "text-success"}
+                class={order.is_completed === 0 ? "text-danger" : "text-success"}
               >
-                {order.is_completed == 0 ? "Not delivered yet" : "Delivered"}
+                {order.is_completed === 0 ? "Not delivered yet" : "Delivered"}
               </p>
             </td>
           </tr>

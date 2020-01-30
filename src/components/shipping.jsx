@@ -14,7 +14,7 @@ import * as helper from "./../helper";
 import FontAwesome from "react-fontawesome";
 import { parse } from "@babel/core";
 
-Array.prototype.sum = function(prop, quantity) {
+Array.prototype.sum = function (prop, quantity) {
   var total = 0;
   for (var i = 0, _len = this.length; i < _len; i++) {
     total += parseInt(this[i][prop]) * parseInt(this[i][quantity]);
@@ -38,11 +38,11 @@ class Shipping extends Component {
   }
 
   transectionInput = () => {
-    if (this.state.payment == "bkash") {
+    if (this.state.payment === "bkash") {
       return (
         <React.Fragment>
           <div class="alert alert-primary" role="alert">
-            Please bkash your payment to <span style={{color: 'red', fontSize: 20}}>01616313957</span> and enter your transection id bellow to proceed 
+            Please bkash your payment to <span style={{ color: 'red', fontSize: 20 }}>01616313957</span> and enter your transection id bellow to proceed
           </div>
           <div class="form-group">
             <label for="name">Transection ID</label>
@@ -51,7 +51,7 @@ class Shipping extends Component {
               class="form-control"
               placeholder="transection ID"
               required
-              onChange={(e) => this.setState({transection_id: e.target.value})}
+              onChange={(e) => this.setState({ transection_id: e.target.value })}
             />
           </div>
         </React.Fragment>
@@ -59,62 +59,62 @@ class Shipping extends Component {
     }
   };
 
-  report = (response) =>{
-      if(response.success === true){
-        alert('Order successfull')
-        this.props.history.push(`/`);
-        this.props.emptyCart()
-      }else{
-        this.setState({error: 'Something wrong'})
-      }
-  }
-
-  orderBooks = () =>{
-    if (this.props.cart.length > 0){
-       if(this.state.name != null && this.state.phone != null  && this.state.address != null){
-        this.props.cart.map((book, index) =>{
-            var url = helper.prefix + 'order';
-            var data = {
-                book_id: book.id,
-                name: this.state.name,
-                payment_method: this.state.payment != null ? this.state.payment : "cash on delivery",
-                quantity: book.quantity,
-                phone_number: this.state.phone,
-                shiping_address: this.state.address,
-                order_type: 0,
-                location: this.state.location ? this.state.location : 'Dhaka',
-                total_price: parseInt(helper.getNewPrice(book.new_price, book.discount)) * parseInt(book.quantity),
-                user_id: this.props.user.id ? this.props.user.id : null,
-                transection_id: this.state.transection_id ? this.state.transection_id : 'null'
-            };
-
-            fetch(url, {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-            headers:{
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization' : 'Bearer '+this.props.token,
-            }
-            }).then(res => res.json())
-            .then(response => this.report(response))
-            .catch(error => console.error('Error:', error));
-        })
-       }else{
-           this.setState({error: 'please input all field'})
-       }
-    }else{
-        this.setState({error: 'please add book to cart for shhoping'})
+  report = (response) => {
+    if (response.success === true) {
+      alert('Order successfull')
+      this.props.history.push(`/`);
+      this.props.emptyCart()
+    } else {
+      this.setState({ error: 'Something wrong' })
     }
   }
 
-  errors = () =>{
-    if(this.state.error != null){
-        return(
-            <span style={{color: 'red'}}>
-                {this.state.error}
-            </span>
-        )
+  orderBooks = () => {
+    if (this.props.cart.length > 0) {
+      if (this.state.name != null && this.state.phone != null && this.state.address != null) {
+        this.props.cart.map((book, index) => {
+          var url = helper.prefix + 'order';
+          var data = {
+            book_id: book.id,
+            name: this.state.name,
+            payment_method: this.state.payment != null ? this.state.payment : "cash on delivery",
+            quantity: book.quantity,
+            phone_number: this.state.phone,
+            shiping_address: this.state.address,
+            order_type: 0,
+            location: this.state.location ? this.state.location : 'Dhaka',
+            total_price: parseInt(helper.getNewPrice(book.new_price, book.discount)) * parseInt(book.quantity),
+            user_id: this.props.user.id ? this.props.user.id : null,
+            transection_id: this.state.transection_id ? this.state.transection_id : 'null'
+          };
+
+          fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': 'Bearer ' + this.props.token,
+            }
+          }).then(res => res.json())
+            .then(response => this.report(response))
+            .catch(error => console.error('Error:', error));
+        })
+      } else {
+        this.setState({ error: 'please input all field' })
+      }
+    } else {
+      this.setState({ error: 'please add book to cart for shhoping' })
+    }
+  }
+
+  errors = () => {
+    if (this.state.error != null) {
+      return (
+        <span style={{ color: 'red' }}>
+          {this.state.error}
+        </span>
+      )
     }
   }
 
@@ -135,77 +135,83 @@ class Shipping extends Component {
                       Fill out your information
                     </h1>
 
-                      <div class="form-group">
-                        <label for="name">Name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          placeholder="name"
-                          value={this.state.name}
-                          onChange={(e) => this.setState({name: e.target.value})}
-                          required
-                        />
-                      </div>
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="name"
+                        value={this.state.name}
+                        onChange={(e) => this.setState({ name: e.target.value })}
+                        required
+                      />
+                    </div>
 
-                      <div class="form-group ">
-                        <label>Phone number</label>
-                        <input
-                          type="number"
-                          class="form-control cart-qInput"
-                          placeholder="phone number"
-                          value={this.state.phone}
-                          onChange={(e) => this.setState({phone: e.target.value})}
-                          required
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="location">Select location</label>
-                        <select class="form-control" id="location" onChange={(e) => this.setState({location: e.target.value})}>
-                          <option value="dhaka">Dhaka</option>
-                          <option value="chittagong">Chittagong</option>
-                          <option value="rajshahi">Rajshahi</option>
-                          <option value="khulna">Khulna</option>
-                          <option value="barisal">Barisal</option>
-                          <option value="rangpur">Rangpur</option>
-                          <option value="sylhet">Sylhet</option>
-                          <option value="sylhet">Mymensingh</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="address">Address</label>
-                        <textarea
-                          class="form-control"
-                          id="address"
-                          rows="3"
-                          required
-                          onChange={(e) => this.setState({address: e.target.value})}
-                        >{this.state.address}</textarea>
-                      </div>
-                      <div class="form-group">
-                        <label for="location">Select payment method</label>
-                        <select
-                          class="form-control"
-                          id="location"
-                          onChange={e =>
-                            this.setState({ payment: e.target.value })
-                          }
-                        >
-                          <option value="cash on delivery">
-                            Cash on delivery
+                    <div class="form-group ">
+                      <label>Phone number</label>
+                      <input
+                        type="number"
+                        class="form-control cart-qInput"
+                        placeholder="phone number"
+                        value={this.state.phone}
+                        onChange={(e) => this.setState({ phone: e.target.value })}
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="location">Select location</label>
+                      <select class="form-control" id="location" onChange={(e) => this.setState({ location: e.target.value })}>
+                        <option value="dhaka">Dhaka</option>
+                        <option value="chittagong">Chittagong</option>
+                        <option value="rajshahi">Rajshahi</option>
+                        <option value="khulna">Khulna</option>
+                        <option value="barisal">Barisal</option>
+                        <option value="rangpur">Rangpur</option>
+                        <option value="sylhet">Sylhet</option>
+                        <option value="sylhet">Mymensingh</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="address">Address</label>
+                      <textarea
+                        class="form-control"
+                        id="address"
+                        rows="3"
+                        required
+                        onChange={(e) => this.setState({ address: e.target.value })}
+                      >{this.state.address}</textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="location">Select payment method</label>
+                      <select
+                        class="form-control"
+                        id="location"
+                        onChange={e =>
+                          this.setState({ payment: e.target.value })
+                        }
+                      >
+
+                        {
+                          this.state.location === 'dhaka' || this.state.location === null ?
+                            
+                            <option value="cash on delivery">
+                              Cash on delivery
                           </option>
-                          <option value="bkash">bkash</option>
-                        </select>
-                      </div>
-                      {this.transectionInput()}
-                      {this.errors()}
-                      <div className="d-flex justify-content-end">
-                        <button  class="btn btn-warning"
+                          : null
+                        }
+                        <option value="bkash">bkash</option>
+                      </select>
+                    </div>
+                    {this.transectionInput()}
+                    {this.errors()}
+                    <div className="d-flex justify-content-end">
+                      <button class="btn btn-warning"
                         onClick={() => this.orderBooks()}
-                        >
-                          Confirm order
+                      >
+                        Confirm order
                         </button>
-                      </div>
+                    </div>
                   </section>
                 </div>
 
@@ -255,7 +261,7 @@ class Shipping extends Component {
                               <tr>
                                 <td>Subtotal</td>
                                 <td class="text-right" id="subtotal">
-                                {parseFloat(this.props.cart.sum("new_price", "quantity")).toFixed(2)} TK.
+                                  {parseFloat(this.props.cart.sum("new_price", "quantity")).toFixed(2)} TK.
                                 </td>
                               </tr>
 
@@ -310,5 +316,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { updateCartQuantity, deleteFromCart, fetchBook, emptyCart}
+  { updateCartQuantity, deleteFromCart, fetchBook, emptyCart }
 )(Shipping);

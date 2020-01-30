@@ -70,16 +70,16 @@ export const emptyCart = () => dispatch => {
 }
 
 export const sortBooks = (item, option) => dispatch => {
-  if (item != undefined) {
+  if (item !== undefined) {
     console.log("dddd vvv ccc xx : ", item)
     let sorted = [];
-    if (option == 'plowToHigh') {
+    if (option === 'plowToHigh') {
       sorted = item.books.data.sort((a, b) => parseFloat(a.old_price) - parseFloat(b.old_price));
-    } else if (option == 'phighToLow') {
+    } else if (option === 'phighToLow') {
       sorted = item.books.data.sort((a, b) => parseFloat(b.old_price) - parseFloat(a.old_price));
-    } else if (option == 'dlowToHigh') {
+    } else if (option === 'dlowToHigh') {
       sorted = item.books.data.sort((a, b) => parseFloat(a.discount) - parseFloat(b.discount));
-    } else if (option == 'dhighToLow') {
+    } else if (option === 'dhighToLow') {
       sorted = item.books.data.sort((a, b) => parseFloat(b.discount) - parseFloat(a.discount));
     }
 

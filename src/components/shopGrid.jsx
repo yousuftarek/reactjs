@@ -239,7 +239,7 @@ class shopGrid extends Component {
               <div class="browse__meta--thumbnail">
                 <img
                   class="img-fluid rounded-circle"
-                  src={this.props.books.author.image == null ? "images/default/default-avatar.png" : this.props.books.author.image}
+                  src={this.props.books.author.image === null ? "images/default/default-avatar.png" : this.props.books.author.image}
                   style={{ width: 100, height: 100 }}
                 />
               </div>
@@ -252,7 +252,7 @@ class shopGrid extends Component {
                 <img
                   style={{ width: 54, height: 54 }}
                   class="img-fluid rounded-circle"
-                  src={this.props.books.author.image == null ? "images/default/default-avatar.png" : this.props.books.author.image}
+                  src={this.props.books.author.image === null ? "images/default/default-avatar.png" : this.props.books.author.image}
                 />
               </div>
             </MobileView>
@@ -275,7 +275,7 @@ class shopGrid extends Component {
                 <img
                   style={{ width: 100, height: 100 }}
                   class="img-fluid rounded-circle"
-                  src={this.props.books.publisher.image == null ? "images/default/publisher.png" : this.props.books.publisher.image}
+                  src={this.props.books.publisher.image === null ? "images/default/publisher.png" : this.props.books.publisher.image}
                 />
               </div>
             </BrowserView>
@@ -287,7 +287,7 @@ class shopGrid extends Component {
                 <img
                   style={{ width: 54, height: 54 }}
                   class="img-fluid rounded-circle"
-                  src={this.props.books.publisher.image == null ? "images/default/publisher.png" : this.props.books.publisher.image}
+                  src={this.props.books.publisher.image === null ? "images/default/publisher.png" : this.props.books.publisher.image}
                 />
               </div>
             </MobileView>
@@ -307,8 +307,8 @@ class shopGrid extends Component {
 
   showBooks = () => {
     if (
-      this.props.books.books.data != null ||
-      this.props.books.books.data != []
+      this.props.books.books.data !== null ||
+      this.props.books.books.data !== []
     ) {
       let books = this.props.books.books.data;
       console.log("book ", this.props.books);
@@ -324,7 +324,7 @@ class shopGrid extends Component {
             author={
               item.author
                 ? null
-                : this.props.books.author != null
+                : this.props.books.author !== null
                   ? this.props.books.author.name
                   : null
             }
@@ -348,7 +348,7 @@ class shopGrid extends Component {
   };
 
   authorSort = () => {
-    if (this.state.authors != null) {
+    if (this.state.authors !== null) {
       window.scrollTo(0, 0);
       return this.state.authors.map((author, index) => {
         return (
@@ -360,7 +360,7 @@ class shopGrid extends Component {
                   class="mr-2"
                   id={author.name}
                   for={author.name}
-                  checked={this.props.selectedAuthor == author.name}
+                  checked={this.props.selectedAuthor === author.name}
                   value={JSON.stringify(author)}
                   onChange={this.handleAuthorChange}
                 />
@@ -383,7 +383,7 @@ class shopGrid extends Component {
   };
 
   publisherSort = () => {
-    if (this.state.publishers != null) {
+    if (this.state.publishers !== null) {
       window.scrollTo(0, 0);
       return this.state.publishers.map((publisher, index) => {
         return (
@@ -395,7 +395,7 @@ class shopGrid extends Component {
                   class="mr-2"
                   id={publisher.name}
                   for={publisher.name}
-                  checked={this.props.selectedPublisher == publisher.name}
+                  checked={this.props.selectedPublisher === publisher.name}
                   value={JSON.stringify(publisher)}
                   onChange={this.handlePublisherChange}
                 />
@@ -411,15 +411,15 @@ class shopGrid extends Component {
   pagination = () => {
     try {
       if (
-        this.props.books.books.data != null ||
-        this.props.books.books.data != []
+        this.props.books.books.data !== null ||
+        this.props.books.books.data !== []
       ) {
         return (
           <React.Fragment>
             <li
               style={{
                 display:
-                  this.props.books.books.prev_page_url != null
+                  this.props.books.books.prev_page_url !== null
                     ? "inline"
                     : "none"
               }}
@@ -452,7 +452,7 @@ class shopGrid extends Component {
             <li
               style={{
                 display:
-                  this.props.books.books.next_page_url != null
+                  this.props.books.books.next_page_url !== null
                     ? "inline"
                     : "none"
               }}
@@ -1307,7 +1307,7 @@ class shopGrid extends Component {
                       </div>
                     </div>
                     <div class="row m-0">
-                      {this.props.books.books != null
+                      {this.props.books.books !== null
                         ? this.showBooks()
                         : console.log("no books found")}
                     </div>

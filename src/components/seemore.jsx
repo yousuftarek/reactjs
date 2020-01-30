@@ -57,47 +57,47 @@ class seeMore extends Component {
     // }
   };
 
-  changePage = (url) =>{
-    if (this.props.type === "author"){
-      fetch( url)
-      .then(res => res.json())
-      .then(response => {
-        if (response.success) {
-          this.setState({ authors: response.authors });
-        }
-      });
-    }else if(this.props.type === "publisher"){
-      fetch( url)
-      .then(res => res.json())
-      .then(response => {
-        if (response.success) {
-          this.setState({ publishers: response.publishers });
-        }
-      });
-    }else if(this.props.type === "category"){
-      fetch( url)
-      .then(res => res.json())
-      .then(response => {
-        if (response.success) {
-          this.setState({ categories: response.categories });
-        }
-      });
+  changePage = (url) => {
+    if (this.props.type === "author") {
+      fetch(url)
+        .then(res => res.json())
+        .then(response => {
+          if (response.success) {
+            this.setState({ authors: response.authors });
+          }
+        });
+    } else if (this.props.type === "publisher") {
+      fetch(url)
+        .then(res => res.json())
+        .then(response => {
+          if (response.success) {
+            this.setState({ publishers: response.publishers });
+          }
+        });
+    } else if (this.props.type === "category") {
+      fetch(url)
+        .then(res => res.json())
+        .then(response => {
+          if (response.success) {
+            this.setState({ categories: response.categories });
+          }
+        });
     }
   }
 
   pagination = () => {
     let data = null;
-    if (this.props.type === "author"){
+    if (this.props.type === "author") {
       data = this.state.authors
-    }else if(this.props.type === "publisher"){
+    } else if (this.props.type === "publisher") {
       data = this.state.publishers
-    }else if(this.props.type === "category"){
+    } else if (this.props.type === "category") {
       data = this.state.categories
     }
     try {
       if (
-        data != null ||
-        data != []
+        data !== null ||
+        data !== []
       ) {
         return (
           <React.Fragment>
@@ -137,7 +137,7 @@ class seeMore extends Component {
             <li
               style={{
                 display:
-                  data.next_page_url != null
+                  data.next_page_url !== null
                     ? "inline"
                     : "none"
               }}
@@ -161,7 +161,7 @@ class seeMore extends Component {
 
   fetchItems = () => {
     if (this.props.type === "author") {
-      if (this.state.authors != null) {
+      if (this.state.authors !== null) {
         return this.state.authors.data.map((author, index) => {
           return (
             <div class="col-md-3 mb-3" key={index}>
@@ -175,19 +175,19 @@ class seeMore extends Component {
                 }}
               >
                 <div class="d-flex justify-content-center">
-                  
-                    <img
-                      class="m-pubp-img"
-                      src={author.image == null ? "images/default/default-avatar.png" : author.image}
-                      style={{
-                        borderRadius: "100%",
-                        width: 120,
-                        height: 120,
-                        backgroundColor: "#F1F2EE",
-                        borderRadius: "100%"
-                      }}
-                    />
-        
+
+                  <img
+                    class="m-pubp-img"
+                    src={author.image == null ? "images/default/default-avatar.png" : author.image}
+                    style={{
+                      borderRadius: "100%",
+                      width: 120,
+                      height: 120,
+                      backgroundColor: "#F1F2EE",
+                      borderRadius: "100%"
+                    }}
+                  />
+
                 </div>
                 <p style={{ color: "black", textAlign: "center" }}>
                   {author.name}
@@ -198,7 +198,7 @@ class seeMore extends Component {
         });
       }
     } else if (this.props.type === "publisher") {
-      if (this.state.publishers != null) {
+      if (this.state.publishers !== null) {
         return this.state.publishers.data.map((publisher, index) => {
           return (
             <div class="col-md-3 mb-3" key={index}>
@@ -212,15 +212,15 @@ class seeMore extends Component {
                 }}
               >
                 <div class="d-flex justify-content-center">
-                    <img
-                      class="m-pubp-img"
-                      src={publisher.image == null ? "images/default/publisher.png" : publisher.image}
-                      style={{
-                        borderRadius: "100%",
-                        width: 120,
-                        height: 120
-                      }}
-                    />
+                  <img
+                    class="m-pubp-img"
+                    src={publisher.image === null ? "images/default/publisher.png" : publisher.image}
+                    style={{
+                      borderRadius: "100%",
+                      width: 120,
+                      height: 120
+                    }}
+                  />
                 </div>
                 <p style={{ color: "black", textAlign: "center" }}>
                   {publisher.name}
@@ -231,36 +231,36 @@ class seeMore extends Component {
         });
       }
     } else if (this.props.type === "category") {
-      if (this.state.categories != null) {
+      if (this.state.categories !== null) {
         return this.state.categories.data.map((category, index) => {
           return (
             <div class="col-md-3 mb-3" key={index}>
-               <Link
+              <Link
                 to="/shopGrid"
                 onClick={() => {
                   this.props.fetchBooks(
                     helper.prefix + "category/" + category.id
                   );
-                  console.log(category  .id);
+                  console.log(category.id);
                 }}
               >
-              <div
-                class="d-flex align-items-center seeMcat"
-                style={{
-                  background: "#F1F2EE",
-                  height: 150,
-                  width: "100%",
-                  borderRadius: 10,
-                  cursor: 'pointer'
-                }}
-              >
-                <p
-                  class="seeMcatP ml-auto mr-auto"
-                  style={{ textAlign: "center", width: '80%'}}
+                <div
+                  class="d-flex align-items-center seeMcat"
+                  style={{
+                    background: "#F1F2EE",
+                    height: 150,
+                    width: "100%",
+                    borderRadius: 10,
+                    cursor: 'pointer'
+                  }}
                 >
-                  {category.name}
-                </p>
-              </div>
+                  <p
+                    class="seeMcatP ml-auto mr-auto"
+                    style={{ textAlign: "center", width: '80%' }}
+                  >
+                    {category.name}
+                  </p>
+                </div>
               </Link>
             </div>
           );
