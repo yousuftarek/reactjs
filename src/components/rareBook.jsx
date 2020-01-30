@@ -21,11 +21,15 @@ class rareBook extends Component {
   constructor(props) {
     super(props);
     this.state = { value: "" };
+    // this.props.fetchBooks(helper.prefix + "category/" + 1596)
   }
+
+  
   showBooks = () => {
+    
     if (
-      this.props.books.books.data !== null ||
-      this.props.books.books.data !== []
+      this.props.books.books.data != null ||
+      this.props.books.books.data != []
     ) {
       let books = this.props.books.books.data;
       console.log("book ", this.props.books);
@@ -52,6 +56,10 @@ class rareBook extends Component {
           />
         );
       });
+    }
+    else
+    {
+      return null
     }
   };
   pagination = () => {

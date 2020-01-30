@@ -19,6 +19,7 @@ class ProductExtra extends Component {
     this.state = {
       mouseOver: false
     };
+    console.log("Hikkkaaaaaa",this.props.history)
   }
 
   render() {
@@ -41,6 +42,7 @@ class ProductExtra extends Component {
               this.setState({ mouseOver: false });
             }}
             onClick={() => {
+              
               this.props.fetchBook(
                 helper.prefix + "book/singlebook/" + this.props.id
               );
@@ -48,7 +50,7 @@ class ProductExtra extends Component {
                 helper.prefix + "book/reviews/" + this.props.id
               );
               console.log("fecth book id = ", this.props.id);
-              this.props.history.push(`/product/`+this.props.id);
+              this.props.history.push('/product/'+this.props.id);
             }}
           >
             <div>

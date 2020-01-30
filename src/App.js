@@ -149,7 +149,7 @@ class App extends Component {
             path="/rareBook"
             //exact
             strict
-            render={props => <RareBook/>}
+            render={props => <RareBook {...props}/>}
           />
            <Route
             exact

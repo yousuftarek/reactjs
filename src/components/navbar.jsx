@@ -1406,14 +1406,21 @@ class navbar extends Component {
                       : "nav-sub nav-item"
                   }
                 >
+                  <Link to="/">
                   <p class="nav-link" href="/">
                     বই<span class="sr-only">(current)</span>
                   </p>
+                  </Link>
                 </li>
 
                 <li
                   class="nav-item"
                   onClick={() =>
+                   { this.props.fetchBooks(
+                      helper.prefix + "category/" + 1596
+                    );
+                    this.props.selectAuthor(null);
+                    this.props.selectPublisher(null);
                     this.setState({
                       category: false,
                       writer: false,
@@ -1421,10 +1428,10 @@ class navbar extends Component {
                       reader: true,
                       ovijatri: false,
                       bookfair: false
-                    })
+                    })}
                   }
                 >
-                  <a class="nav-link" href="./rareBook">
+                  <a class="nav-link" href="/rareBook">
                     পুরাতন/দুর্লভ বই
                   </a>
                 </li>
@@ -1441,7 +1448,7 @@ class navbar extends Component {
                     })
                   }
                 >
-                  <a class="nav-link" href="./readerCorner">
+                  <a class="nav-link" href="/readerCorner">
                     পাঠক কর্নার
                   </a>
                 </li>
@@ -1458,7 +1465,7 @@ class navbar extends Component {
                     })
                   }
                 >
-                  <a class="nav-link" href="./institutionalOrder">
+                  <a class="nav-link" href="/institutionalOrder">
                     প্রাতিষ্ঠানিক অর্ডার
                   </a>
                 </li>
@@ -1475,7 +1482,7 @@ class navbar extends Component {
                     })
                   }
                 >
-                  <a class="nav-link" href="./blog">
+                  <a class="nav-link" href="/blog">
                     অভিযাত্রী
                   </a>
                 </li>
@@ -1492,7 +1499,7 @@ class navbar extends Component {
                     })
                   }
                 >
-                  <a class="nav-link" href="./bookFair">
+                  <a class="nav-link" href="/bookFair">
                   অমর একুশে গ্রন্থমেলা ২০২০
                   </a>
                 </li>
@@ -1585,11 +1592,11 @@ class navbar extends Component {
               />
             </div>
             <div class="ml-4">{this.allPublisher()}</div>
-            <a href="./rareBook">পুরাতন/দুর্লভ বই</a>
-            <a href="./readerCorner">পাঠক কর্নার</a>
-            <a href="./institutionOrder">প্রাতিষ্ঠানিক অর্ডার</a>
-            <a href="./blog">অভিযাত্রী</a>
-            <a href="./bookFair">অমর একুশে গ্রন্থমেলা ২০২০</a>
+            <a href="/rareBook">পুরাতন/দুর্লভ বই</a>
+            <a href="/readerCorner">পাঠক কর্নার</a>
+            <a href="/institutionOrder">প্রাতিষ্ঠানিক অর্ডার</a>
+            <a href="/blog">অভিযাত্রী</a>
+            <a href="/bookFair">অমর একুশে গ্রন্থমেলা ২০২০</a>
           </div>
           <div
             id="profileSidenav"
