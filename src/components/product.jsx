@@ -83,7 +83,11 @@ class Product extends Component {
             <div style={{overflow: 'hidden'}}>
               <p style={{ color: "black", marginTop: 10, opacity: this.state.mouseOver ? 0.3 : 1}}>{this.props.name}</p>
               <p style={{ color: "black" , opacity: this.state.mouseOver ? 0.3 : 1}}>{this.props.writer}</p>
+<<<<<<< HEAD
               <p style={{ color: "black" , opacity: this.state.mouseOver ? 0.3 : 1}}>মূল্য : {helper.getNewPrice(this.props.price, this.props.discount)}</p>
+=======
+              <p style={{ color: "black" , opacity: this.state.mouseOver ? 0.3 : 1}}>মূল্য : {this.props.price}</p>
+>>>>>>> 028a4f5cac5b776e5567ff287f8abb56d62a078d
             </div>
             <Link to="/product/:id">
             <button type="button" class="btn btn-primary mt-2" style={{width: '100%', display: this.state.mouseOver?'inline':'none'}}>View Details</button>

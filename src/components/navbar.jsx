@@ -1589,7 +1589,7 @@ class navbar extends Component {
             <a href="./readerCorner">পাঠক কর্নার</a>
             <a href="./institutionOrder">প্রাতিষ্ঠানিক অর্ডার</a>
             <a href="./blog">অভিযাত্রী</a>
-            <a href="./bookFair">বইমেলা</a>
+            <a href="./bookFair">অমর একুশে গ্রন্থমেলা ২০২০</a>
           </div>
           <div
             id="profileSidenav"

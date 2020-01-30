@@ -178,7 +178,7 @@ class seeMore extends Component {
 
                   <img
                     class="m-pubp-img"
-                    src={author.image == null ? "images/default/default-avatar.png" : author.image}
+                    src={author.image === null ? "images/default/default-avatar.png" : author.image}
                     style={{
                       borderRadius: "100%",
                       width: 120,

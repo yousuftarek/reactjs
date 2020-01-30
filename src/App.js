@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import {
   Route,
-  BrowserRouter
-  // Link,
-  // NavLink,
-  // Redirect,
-  // Prompt
+  BrowserRouter,
+  Link,
+  NavLink,
+  Redirect,
+  Prompt
 } from "react-router-dom";
 import Footer from "./components/footer";
 
@@ -13,7 +13,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Home from "./screens/home";
 import Navbar from "./components/navbar";
-// import MainSlider from "./components/mainSlider";
+import MainSlider from "./components/mainSlider";
 import SingleProduct from "./components/singleProduct";
 import ShopGrid from "./components/shopGrid";
 import Signin from "./components/signin";
@@ -34,7 +34,7 @@ import PrivacyPolicy from "./components/privacyPolicy";
 import CookiesPolicy from "./components/cookiesPolicy";
 import About from "./components/about";
 
-// import { Style } from "react-style-tag";
+import { Style } from "react-style-tag";
 import {Provider} from 'react-redux'
 import {
   BrowserView,
@@ -47,21 +47,21 @@ import store from './store';
 
 
 class App extends Component {
-  //componentWillMount() {
-    // loadjs("js/vendor/modernizr-3.5.0.min.js", function() {
-    //   loadjs("js/vendor/jquery-3.2.1.min.js", function() {
-    //     loadjs("js/popper.min.js", function() {
-    //       loadjs("js/plugins.js", function() {
-    //         loadjs("js/bootstrap.min.js", function() {
-    //           loadjs("js/active.js", function() {
-    //             loadjs("js/main.js");
-    //           });
-    //         });
-    //       });
-    //     });
-    //   });
-    // });
-    //}
+  componentWillMount() {
+    loadjs("js/vendor/modernizr-3.5.0.min.js", function() {
+      loadjs("js/vendor/jquery-3.2.1.min.js", function() {
+        loadjs("js/popper.min.js", function() {
+          loadjs("js/plugins.js", function() {
+            loadjs("js/bootstrap.min.js", function() {
+              loadjs("js/active.js", function() {
+                loadjs("js/main.js");
+              });
+            });
+          });
+        });
+      });
+    });
+    }
   
   render() {
     return (
@@ -145,9 +145,9 @@ class App extends Component {
             render={props => <Seemore {...props}/>}
           />
           <Route
-            exact
+            //exact
             path="/rareBook"
-            exact
+            //exact
             strict
             render={props => <RareBook/>}
           />
